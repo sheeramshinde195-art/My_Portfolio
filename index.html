@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shreeram Shinde Portfolio</title>
+<style>
+:root{--bg:#070b14;--card:#0e1526;--line:#1e293b;--accent:#22d3ee;--accent2:#a78bfa;--text:#e2e8f0;--muted:#94a3b8}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',system-ui,sans-serif}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);overflow-x:hidden}
+
+.wrap{max-width:1150px;margin:auto;padding:0 22px}
+nav{position:fixed;top:0;width:100%;z-index:99;background:rgba(7,11,20,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:66px}
+.logo{font-weight:800;font-size:20px}
+
+.logo span{color:var(--accent)}
+nav a{color:var(--muted);margin-left:22px;font-size:15px;transition:.25s}
+nav a:hover{color:var(--accent)}
+
+.hero{min-height:100vh;display:flex;align-items:center;background:radial-gradient(circle at 20% 20%,rgba(34,211,238,.12),transparent 40%),radial-gradient(circle at 80% 70%,rgba(167,139,250,.12),transparent 40%)}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:center}
+.badge{display:inline-block;border:1px solid var(--line);background:var(--card);padding:7px 16px;border-radius:30px;color:var(--accent);font-size:14px;margin-bottom:20px}
+
+h1{font-size:52px;line-height:1.1;color:#fff}
+.gradient{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.type{margin-top:18px;font-size:20px;color:var(--muted);min-height:30px}
+.cursor{display:inline-block;width:2px;background:var(--accent);animation:blink .8s infinite}
+
+@keyframes blink{50%{opacity:0}}
+.hero p.desc{margin-top:18px;color:var(--muted);max-width:520px}
+.buttons{margin-top:28px;display:flex;gap:14px;flex-wrap:wrap}
+
+.btn{padding:13px 26px;border-radius:10px;font-weight:700;transition:.25s;border:1px solid transparent}
+.btn1{background:var(--accent);color:#04121a}
+.btn2{border-color:var(--accent);color:var(--accent)}
+
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(34,211,238,.18)}
+.dashboard{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:0 25px 60px rgba(0,0,0,.45)}
+.kpis{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+
+.kpi{background:#111c31;border:1px solid var(--line);border-radius:14px;padding:18px}
+.kpi b{font-size:28px;color:#fff;display:block}
+.kpi small{color:var(--muted)}
+
+.chart{margin-top:16px;height:120px;display:flex;align-items:flex-end;gap:10px}
+.bar{flex:1;background:linear-gradient(180deg,var(--accent),var(--accent2));border-radius:6px 6px 0 0;animation:grow 1.4s ease}
+@keyframes grow{from{height:0}}
+
+section{padding:90px 0}
+.sec-head{text-align:center;margin-bottom:50px}
+.sec-head h2{font-size:34px;color:#fff}
+.sec-head p{color:var(--muted);margin-top:10px}
+.line{width:70px;height:4px;background:linear-gradient(90deg,var(--accent),var(--accent2));margin:14px auto 0;border-radius:5px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;transition:.3s}
+
+.card:hover{transform:translateY(-6px);border-color:var(--accent)}
+
+.card h3{color:#fff;margin-bottom:10px}
+
+.card p{color:var(--muted);font-size:15px}
+.flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;text-align:center;position:relative}
+.step span{font-size:26px}
+.step h4{margin:10px 0 6px;color:#fff}
+.step p{font-size:13px;color:var(--muted)}
+
+.case{background:linear-gradient(145deg,#0e1526,#111c31);border:1px solid var(--line);border-radius:22px;padding:38px}
+.case h3{font-size:27px;color:#fff}
+.case .tags{margin:16px 0}
+.tag{display:inline-block;background:#16233c;color:var(--accent);padding:6px 14px;border-radius:20px;font-size:13px;margin:4px 6px 0 0}
+
+.case-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:24px}
+
+.mini{background:#0b1220;border:1px solid var(--line);border-radius:14px;padding:20px}
+.mini h4{color:var(--accent);margin-bottom:8px}
+.mini p{color:var(--muted);font-size:14px}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+.skill{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+.skill-top{display:flex;justify-content:space-between;margin-bottom:10px}
+.track{height:8px;background:#16233c;border-radius:10px;overflow:hidden}
+.fill{height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width 1.4s ease}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+footer{border-top:1px solid var(--line);padding:30px;text-align:center;color:var(--muted);font-size:14px}
+@media(max-width:850px){.hero-grid{grid-template-columns:1fr}h1{font-size:38px}}
+
+/* About card becomes a 2-column layout */
+.about-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 40px;
+}
+
+/* Photo styling */
+.about-photo {
+  flex: 0 0 240px;          /* fixed width column */
+  display: flex;
+  justify-content: center;
+}
+
+.about-photo img {
+  width: 240px;
+  height: 240px;
+  object-fit: cover;         /* keeps face centered, no stretching */
+  border-radius: 50%;        /* circular — swap to 16px for rounded square */
+  border: 4px solid #e0e0e0; /* subtle frame */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  
+  /* Added for the hover effect */
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+              border-color 0.4s ease, 
+              box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+/* The Hover Effect */
+.about-photo img:hover {
+  transform: scale(1.05) translateY(-5px); /* Grows slightly and lifts up */
+  border-color: var(--accent);             /* Frame changes to your cyan accent */
+  box-shadow: 0 15px 35px rgba(34, 211, 238, 0.25); /* Soft cyan glow */
+}/* Text column */
+.about-text {
+  flex: 1;
+}
+
+.about-text h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+.about-text p {
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+/* Responsive — stack on mobile */
+@media (max-width: 768px) {
+  .about-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 28px 20px;
+  }
+  .about-photo {
+    flex: 0 0 auto;
+  }
+  .about-photo img {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+
+/* ============================================
+   EDUCATION + CERTIFICATIONS — spacing & hover
+   (colors & layout system untouched)
+   ============================================ */
+
+/* Space between section headings and content */
+#education .sec-head,
+#certifications .sec-head {
+  margin-bottom: 46px;
+}
+
+/* Grid gaps for these two sections */
+#education .grid3,
+#certifications .grid3 {
+  gap: 26px;
+}
+
+/* Proper internal padding on the education & cert cards */
+#education .card,
+#certifications .card {
+  padding: 32px 28px;
+  transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
+}
+
+/* Nice hover effect — lift + glow using existing accent color */
+#education .card:hover,
+#certifications .card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent);
+  box-shadow: 0 18px 40px rgba(34, 211, 238, .15);
+}
+
+/* Heading spacing inside the card */
+#education .card h3,
+#certifications .card h3 {
+  margin: 0 0 14px;
+  line-height: 1.35;
+}
+
+/* Line spacing for details */
+#education .card p,
+#certifications .card p {
+  margin: 0 0 12px;
+  line-height: 1.85;
+}
+
+#education .card p:last-child,
+#certifications .card p:last-child {
+  margin-bottom: 0;
+}
+
+/* Section outer spacing */
+#education,
+#certifications {
+  padding: 90px 0;
+}
+
+/* Section divider — clean border line instead of <hr> */
+#education {
+  border-top: 1px solid var(--line);
+}
+
+#certifications {
+  border-top: 1px solid var(--line);
+}
+
+/* Responsive tweak */
+@media (max-width: 850px) {
+  #education,
+  #certifications {
+    padding: 70px 0;
+  }
+  #education .card,
+  #certifications .card {
+    padding: 26px 22px;
+  }
+}
+
+/* ===== STATS SECTION STYLING ===== */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 60px; /* Space above certifications */
+}
+
+.stat-card {
+  background: var(--card); /* Matches your dark cards */
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 40px 20px; /* Professional padding */
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+              box-shadow 0.4s ease, 
+              border-color 0.4s ease;
+}
+
+/* The Cyan Top Line */
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2)); /* Gradient line */
+  opacity: 0.8;
+  transition: opacity 0.4s ease;
+}
+
+/* Unique Hover Effect: Lift + Cyan Glow + Accent Border */
+.stat-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--accent);
+  box-shadow: 0 20px 40px rgba(34, 211, 238, 0.15); /* Glow */
+}
+
+.stat-card:hover::before {
+  opacity: 1;
+}
+
+/* The Numbers */
+.stat-card h3 {
+  font-size: 42px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 8px;
+  line-height: 1;
+  transition: color 0.3s ease;
+}
+
+/* Make the number gradient on hover */
+.stat-card:hover h3 {
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* The Text */
+.stat-card p {
+  font-size: 15px;
+  color: var(--muted);
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+.stat-card:hover p {
+  color: var(--text);
+}
+
+/* Responsive */
+@media (max-width: 850px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .stat-card {
+    padding: 30px 15px;
+  }
+  .stat-card h3 {
+    font-size: 32px;
+  }
+}
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}]
+
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="logo">Shreeram<span> Shinde</span></div>
+    
+    <div>
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#certifications">Certificates</a>
+      <a href="#workflow">Workflow</a>
+      <a href="#project">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+  </div>
+</nav>
+
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="badge">Fresher Data Analyst </div>
+      <h1>Hi, I’m <span class="gradient">Shreeram Shinde</span></h1>
+      <div class="type"><span id="typed"></span><span class="cursor">&nbsp;</span></div>
+      <p class="desc">I analyze raw data using Python, Pandas, SQL and MySQL to find patterns, build KPIs, and turn numbers into clear business decisions.</p>
+      <div class="buttons">
+        <a href="#project" class="btn btn1">Project</a>
+        <a href="#contact" class="btn btn2">Hire Me</a>
+      </div>
+    </div>
+    <div class="dashboard">
+      <div class="kpis">
+        <div class="kpi"><b data-count="6">0</b><small>+Analytics Steps Mastered</small></div>
+        <div class="kpi"><b data-count="2">0</b><small>+Project</small></div>
+        <div class="kpi"><b data-count="15">0</b><small>+Core Tools</small></div>
+        <div class="kpi"><b data-count="99.99">0</b><small> % Learning Mindset</small></div>
+      </div>
+      <div class="chart">
+        <div class="bar" style="height:35%"></div>
+        <div class="bar" style="height:70%"></div>
+        <div class="bar" style="height:55%"></div>
+        <div class="bar" style="height:90%"></div>
+        <div class="bar" style="height:65%"></div>
+        <div class="bar" style="height:80%"></div>
+        <div class="bar" style="height:100%"></div>
+      </div>
+    </div>
+  </div>
+</header>
+<hr>
+
+<!-- About Section -->
+<section id="about">
+  <div class="wrap">
+
+    <div class="sec-head">
+      <h2>About Me</h2>
+      <p>Get to know me, my skills, and my educational background.</p>
+      <div class="line"></div>
+    </div>
+
+    <!-- Personal Introduction -->
+    <div class="card about-card">
+
+      <!-- Photo -->
+      <div class="about-photo">
+        <img src="C:\Users\HP\OneDrive\Documents\Pictures\My img\shreeram 1.png"" alt="Shreeram Shinde">
+      </div>
+
+      <!-- Text -->
+      <div class="about-text">
+        <h3>Hello, I'm Shreeram Shinde</h3>
+        <p>
+          I am a Data Analyst enthusiast with a background in
+          BBA(CA), passionate about transforming raw data into
+          actionable business insights. My technical expertise
+          includes Python, SQL, Excel, Power BI, Pandas, and NumPy,
+          with a focus on data cleaning, exploratory data analysis,
+          KPI tracking, and interactive dashboard development.
+        </p>
+        <p>
+          I apply these skills through hands-on projects, including
+          Customer Churn Analysis, Sales Data Analysis, and Hospital
+          Patient & Billing Analytics. I have also completed the
+          Tata GenAI Powered Data Analytics Job Simulation through
+          Forage, gaining practical exposure to risk profiling,
+          AI-driven delinquency prediction, and business reporting.
+        </p>
+        <p>
+          My goal is to turn complex datasets into clear,
+          data-driven recommendations that help businesses
+          understand performance, identify opportunities, and
+          make informed decisions. I am eager to contribute my
+          analytical skills and grow as a Data Analyst.
+        </p>
+      </div>
+
+    </div>
+<br>
+<br>
+    <!-- Stats Counter -->
+    <div class="stats-grid">
+
+      <div class="stat-card">
+        <h3><span class="counter" data-target="20">0</span>+</h3>
+        <p>SQL Core Concept</p>
+      </div>
+      <div class="stat-card">
+        <h3><span class="counter" data-target="15">0</span></h3>
+        <p>Core Tools</p>
+      </div>
+      <div class="stat-card">
+        <h3><span class="counter" data-target="7">0</span>+</h3>
+        <p>Certifications</p>
+      </div>
+      <div class="stat-card">
+        <h3><span class="counter" data-target="99.99">0</span>%</h3>
+        <p>Curiosity</p>
+      </div>
+    </div>
+<script>
+// Stats Counter Animation (Starts when scrolled into view)
+const counters = document.querySelectorAll('.counter');
+const speed = 50; // Lower is faster, higher is slower
+
+const animateCounters = () => {
+  counters.forEach(counter => {
+    const updateCount = () => {
+      const target = +counter.getAttribute('data-target');
+      const count = +counter.innerText;
+      
+      // Calculate increment
+      const inc = target / speed;
+
+      if (count < target) {
+        counter.innerText = Math.ceil(count + inc);
+        setTimeout(updateCount, 30);
+      } else {
+        counter.innerText = target;
+      }
+    };
+    updateCount();
+  });
+};
+
+// Trigger only when the stats section comes into view
+const statsSection = document.querySelector('.stats-grid');
+if (statsSection) {
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounters();
+        observer.unobserve(entry.target); // Run only once
+      }
+    });
+  }, { threshold: 0.5 });
+  
+  observer.observe(statsSection);
+}
+</script>
+
+  </div>
+
+
+</section>
+<hr>
+
+
+ <!-- ============ EDUCATION ============ -->
+<section id="education">
+  <div class="wrap">
+
+    <div class="sec-head">
+      <h2>Education</h2>
+      <p>My academic background and educational qualifications.</p>
+      <div class="line"></div>
+    </div>
+
+    <div class="grid3">
+
+      <div class="card">
+        <h3>Bachelor's Degree</h3>
+        <p>
+          <strong>Degree:</strong> BBA(CA)<br>
+          <strong>College:</strong> Shri Dnyaneshwar Mahavidyalaya, Newasa, Ahilyanagar<br>
+          <strong>University:</strong> Savitribai Phule Pune University (SPPU)<br>
+          <strong>Year:</strong> 2023 - 2026<br>
+          <strong>CGPA:</strong> 6.95
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Higher Secondary (12th)</h3>
+        <p>
+          <strong>Stream:</strong> Science<br>
+          <strong>Percentage:</strong> 63.33%
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Secondary School (10th)</h3>
+        <p>
+          <strong>Percentage:</strong> 73.33%
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<hr>
+<!-- ============ CERTIFICATIONS ============ -->
+<section id="certifications">
+  <div class="wrap">
+
+    <div class="sec-head">
+      <h2>Certifications </h2>
+      <p>Professional learning and practical experience.</p>
+      <div class="line"></div>
+    </div>
+
+
+    <div class="grid3">
+
+      <!-- Data Analyst Course -->
+      <div class="card">
+        <h3>Data Analytics With AI/ML</h3>
+        <p>
+          <strong>Institute:</strong> Naresh IT<br>
+          <strong>Location:</strong> Hyderabad, Telangana
+        </p>
+        <p>
+          Learning data analytics concepts and developing
+          practical skills for a Data Analyst career.
+        </p>
+      </div>
+
+      <!-- Tata Data Analytics Certificate -->
+      <div class="card">
+        <h3>Tata – Data Analytics Job Simulation</h3>
+        <p>
+          <strong>Platform:</strong> Forage<br>
+          <strong>Certificate:</strong> GenAI Powered Data Analytics<br>
+          <strong>Issued:</strong> September 27, 2026
+        </p>
+      </div>
+
+      <!-- Full Stack Python Development -->
+      <div class="card">
+        <h3>Full Stack Python Development</h3>
+        <p>
+          <strong>Institute:</strong> A2Z IT Hub<br>
+          <strong>Location:</strong> Ahilyanagar, Maharashtra
+        </p>
+        <p>
+          Learning web development technologies and
+          website development fundamentals.
+        </p>
+      </div>
+<br>
+    </div>
+    <!-- Stats Counter -->
+    
+  </div>
+
+</section>
+
+</div>
+<br>
+<br>
+<br>
+
+<hr>
+
+
+
+<!-- Analytics Workflow Section -->
+<style>
+.step.highlight {
+  background: linear-gradient(145deg, rgba(14, 21, 38, 1) 0%, rgba(34, 211, 238, 0.08) 100%);
+  border: 1px solid rgba(34, 211, 238, 0.3);
+}
+.step.highlight::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+}/* ===== ANALYTICS WORKFLOW HOVER EFFECT ===== */
+.flow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.step {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 24px 18px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  /* Smooth transition for all hover effects */
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+              box-shadow 0.4s ease, 
+              border-color 0.4s ease;
+  cursor: default;
+}
+
+/* Unique Hover Effect: Lift + Cyan Glow + Border */
+.step:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent);
+  box-shadow: 0 15px 30px rgba(34, 211, 238, 0.12);
+}
+
+/* Icon pop effect */
+.step span {
+  font-size: 28px;
+  display: inline-block;
+  margin-bottom: 12px;
+  transition: transform 0.4s ease;
+}
+
+.step:hover span {
+  transform: scale(1.2) translateY(-3px);
+}
+
+/* Text styling */
+.step h4 {
+  margin: 0 0 8px;
+  color: #fff;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.step p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.step:hover p {
+  color: var(--text);
+}
+</style>
+<section id="workflow">
+  <div class="wrap">
+
+    <div class="sec-head">
+      <h2>My Analytics Workflow</h2>
+      <p>Every project follows a structured, business-focused process.</p>
+      <div class="line"></div>
+    </div>
+
+    <!-- Workflow Steps -->
+    <div class="flow">
+      <div class="step">
+        <span>📥</span>
+        <h4>Collect Data</h4>
+        <p>CSV / Database Sources</p>
+      </div>
+
+      <div class="step">
+        <span>🧹</span>
+        <h4>Clean Data</h4>
+        <p>Pandas & Power Query</p>
+      </div>
+
+      <div class="step">
+        <span>🗄️</span>
+        <h4>Store Data</h4>
+        <p>MySQL Database</p>
+      </div>
+
+      <div class="step">
+        <span>🔍</span>
+        <h4>Analyze Data</h4>
+        <p>SQL & Exploratory Analysis</p>
+      </div>
+
+      <div class="step">
+        <span>📊</span>
+        <h4>Visualize Data</h4>
+        <p>Power BI, Charts & KPIs</p>
+      </div>
+
+      <div class="step">
+        <span>💡</span>	
+        <h4>Business Insights</h4>
+        <p>Recommendations & Decisions</p>
+      </div>
+    </div>
+  </div>
+</section>
+<hr>
+<section id="project" style="background:#0a0f1c">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Projects</h2>
+      <p>End-to-end analytics project built from raw data to business recommendations.</p>
+      <div class="line"></div>
+    </div>
+    <div class="case">
+      <h3> Hospital Patient & Billing Analysis</h3>
+      <div class="tags">
+        <span> Python |</span>&nbsp;<span>Pandas |</span>&nbsp;<span>NumPy |</span>&nbsp;<span>MySQL |</span>&nbsp;<span>SQL |</span>&nbsp;<span>EDA |</span>&nbsp;<span>Data Visualization </span>
+      </div>
+      <div class="case-grid">
+        <div class="mini">
+          <h4>Business Problem</h4>
+          <p>Hospital management needed clarity on patient visits, department performance, waiting time, satisfaction, and billing patterns.</p>
+        </div>
+        <div class="mini">
+          <h4>My Approach</h4>
+          <p>Cleaned patient and billing data using Pandas, stored it in MySQL, and analyzed it using SQL queries, CTEs, and window functions.</p>
+        </div>
+        <div class="mini">
+          <h4>Key Analysis</h4>
+          <p>Department-wise visits, billing trends, patient satisfaction, waiting-time patterns, and high-value billing segments.</p>
+        </div>
+        <div class="mini">
+          <h4>Outcome</h4>
+          <p>Created KPIs, visual insights, and recommendations that can support better operational and billing decisions.</p>
+        </div>
+      </div>
+      <div class="buttons">
+        <a href="https://github.com/sheeramshinde195-art/hospital-patient-billing-analytics.git" class="btn btn1">GitHub Code</a>
+       
+      </div>
+    </div>
+
+<br>
+<hr>
+<br>
+
+ <div class="case">
+      <h3>Customer Churn Analysis </h3>
+     <div class="tags">
+        <span> Python |</span>&nbsp;<span>Pandas |</span>&nbsp;<span>NumPy |</span>&nbsp;<span>MySQL |</span>&nbsp;<span>SQL |</span>&nbsp;<span>EDA |</span>&nbsp;<span>Data Visualization </span>
+      </div>
+      <div class="case-grid">
+        <div class="mini">
+          <h4>Business Problem</h4>
+          <p>Businesses needed to understand why customers were leaving, identify high-risk customer segments, and analyze the factors affecting customer retention.</p>
+        </div>
+        <div class="mini">
+          <h4>My Approach</h4>
+          <p>Cleaned and transformed customer data using Python, Pandas, and NumPy. Stored and analyzed data using MySQL and SQL queries, including CTEs and window functions, to identify churn patterns and customer behavior.</p>
+        </div>
+        <div class="mini">
+          <h4>Key Analysis</h4>
+          <p>Customer churn rate, contract type analysis, tenure-based churn, monthly charges, payment methods, service usage, and customer segments with high churn rates.</p>
+        </div>
+        <div class="mini">
+          <h4>Outcome</h4>
+          <p>Identified key churn patterns, developed KPIs and visual insights, and provided data-driven recommendations to improve customer retention and reduce churn.</p>
+        </div>
+      </div>
+      <div class="buttons">
+        <a href="https://github.com/sheeramshinde195-art/customer-churn-analysis.git" class="btn btn1">GitHub Code</a>
+       
+      </div>
+    </div>
+
+
+
+
+   </div>
+</section>
+<br>
+<hr>
+<br>
+
+<!-- ============ FEATURED DASHBOARDS SECTION ============ -->
+<section id="dashboards" style="background:#0a0f1c">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Interactive Dashboards</h2>
+      <p>Visual reports built with Power BI & Excel for executive decision-making and KPI monitoring.</p>
+      <div class="line"></div>
+    </div>
+
+    <div class="dashboard-grid">
+      
+      <!-- Dashboard Card 1 -->
+      <div class="dash-card">
+        <div class="dash-preview">
+          <span class="dash-icon">📊</span>
+          <div class="dash-overlay">
+            <a href="#" class="btn btn1">View Interactive Report</a>
+          </div>
+        </div>
+       <div class="dash-info">
+  <h3>Customer Churn Analysis</h3>
+  <p>Exploratory data analysis and interactive dashboard identifying key risk factors, churn rates, and customer retention metrics.</p>
+  <div class="dash-tags">
+    <span>Python</span>
+    <span>Pandas</span>
+    <span>Power BI</span>
+    <span>SQL</span>
+  </div>
+</div>
+      </div>
+
+      <!-- Dashboard Card 2 -->
+      <div class="dash-card">
+        <div class="dash-preview">
+          <span class="dash-icon">🏥</span>
+          <div class="dash-overlay">
+            <a href="#" class="btn btn1">View Interactive Report</a>
+          </div>
+        </div>
+        <div class="dash-info">
+          <h3>Hospital Patient Operations & Billing</h3>
+          <p>Executive reporting dashboard tracking patient admission trends, wait times, department load, and billing collections.</p>
+          <div class="dash-tags">
+            <span>Power BI</span>
+            <span>MySQL</span>
+            <span>Data Modeling</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+/* ===== FEATURED DASHBOARDS STYLING ===== */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+}
+
+.dash-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+              box-shadow 0.4s ease, 
+              border-color 0.4s ease;
+}
+
+.dash-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent);
+  box-shadow: 0 20px 40px rgba(34, 211, 238, 0.15);
+}
+
+.dash-preview {
+  height: 180px;
+  background: radial-gradient(circle at 50% 50%, #16233c 0%, #0b1220 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-bottom: 1px solid var(--line);
+}
+
+.dash-icon {
+  font-size: 54px;
+  transition: transform 0.4s ease;
+}
+
+.dash-card:hover .dash-icon {
+  transform: scale(1.15);
+}
+
+.dash-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(7, 11, 20, 0.85);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.dash-card:hover .dash-overlay {
+  opacity: 1;
+}
+
+.dash-info {
+  padding: 24px;
+}
+
+.dash-info h3 {
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.dash-info p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.dash-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.dash-tags span {
+  background: #111c31;
+  color: var(--accent);
+  border: 1px solid var(--line);
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+</style>
+<hr>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Skills & Tools</h2>
+      <p>Practical skills I use for data cleaning, analysis, querying, and reporting.</p>
+      <div class="line"></div>
+    </div>
+    <div class="skills">
+      <div class="skill"><div class="skill-top"><b>SQL / MySQL</b><span>90%</span></div><div class="track"><div class="fill" data-w="90"></div></div></div>
+      <div class="skill"><div class="skill-top"><b>Python & Pandas</b><span>85%</span></div><div class="track"><div class="fill" data-w="85"></div></div></div>
+      <div class="skill"><div class="skill-top"><b>Data Cleaning & EDA</b><span>88%</span></div><div class="track"><div class="fill" data-w="88"></div></div></div>
+      <div class="skill"><div class="skill-top"><b>Data Visualization</b><span>80%</span></div><div class="track"><div class="fill" data-w="80"></div></div></div>
+      <div class="skill"><div class="skill-top"><b>Excel & Reporting</b><span>82%</span></div><div class="track"><div class="fill" data-w="82"></div></div></div>
+      <div class="skill"><div class="skill-top"><b>Business Communication</b><span>85%</span></div><div class="track"><div class="fill" data-w="85"></div></div></div>
+    </div>
+  </div>
+</section>
+<br>
+<hr>
+
+<!-- ============ TECHNICAL SKILLS MATRIX SECTION ============ -->
+<section id="tech-matrix">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Technical Skill Matrix</h2>
+      <p>Categorized breakdown of the specialized tools, languages, and core concepts I use.</p>
+      <div class="line"></div>
+    </div>
+    
+    <div class="matrix-grid">
+      <div class="matrix-card">
+        <div class="matrix-icon">💻</div>
+        <h3>Languages & Libraries</h3>
+        <div class="badge-list">
+          <span class="m-badge">Python</span>
+          <span class="m-badge">SQL</span>
+          <span class="m-badge">Pandas</span>
+          <span class="m-badge">NumPy</span>
+          <span class="m-badge">Matplotlib</span>
+          <span class="m-badge">Seaborn</span>
+        </div>
+      </div>
+
+      <div class="matrix-card">
+        <div class="matrix-icon">🗄️</div>
+        <h3>Databases & Querying</h3>
+        <div class="badge-list">
+          <span class="m-badge">MySQL</span>
+          <span class="m-badge">CTEs</span>
+          <span class="m-badge">Window Functions</span>
+          <span class="m-badge">Joins & Aggregations</span>
+          <span class="m-badge">Data Modeling</span>
+        </div>
+      </div>
+
+      <div class="matrix-card">
+        <div class="matrix-icon">📊</div>
+        <h3>BI & Reporting Tools</h3>
+        <div class="badge-list">
+          <span class="m-badge">Power BI</span>
+          <span class="m-badge">DAX Basics</span>
+          <span class="m-badge">Advanced Excel</span>
+          <span class="m-badge">Pivot Tables</span>
+          <span class="m-badge">KPI Dashboards</span>
+        </div>
+      </div>
+
+      <div class="matrix-card">
+        <div class="matrix-icon">⚙️</div>
+        <h3>Analytical Concepts</h3>
+        <div class="badge-list">
+          <span class="m-badge">Data Cleaning</span>
+          <span class="m-badge">EDA</span>
+         
+          <span class="m-badge">Risk Profiling</span>
+          <span class="m-badge">Business Insights</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* ===== TECHNICAL SKILLS MATRIX STYLING ===== */
+.matrix-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.matrix-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 32px 24px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+              box-shadow 0.4s ease, 
+              border-color 0.4s ease;
+}
+
+/* Accent Top Border Line */
+.matrix-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  opacity: 0.7;
+  transition: opacity 0.4s ease;
+}
+
+/* Hover Effect: Lift, Glow & Border Accent */
+.matrix-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--accent);
+  box-shadow: 0 20px 40px rgba(34, 211, 238, 0.15);
+}
+
+.matrix-card:hover::before {
+  opacity: 1;
+}
+
+.matrix-icon {
+  font-size: 32px;
+  margin-bottom: 14px;
+  display: inline-block;
+  transition: transform 0.4s ease;
+}
+
+.matrix-card:hover .matrix-icon {
+  transform: scale(1.15) translateY(-3px);
+}
+
+.matrix-card h3 {
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 18px;
+  font-weight: 700;
+}
+
+.badge-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.m-badge {
+  background: #16233c;
+  color: var(--accent);
+  border: 1px solid rgba(34, 211, 238, 0.2);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.matrix-card:hover .m-badge {
+  background: rgba(34, 211, 238, 0.1);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .matrix-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<hr>
+
+<section id="contact" style="background:#0a0f1c">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Let’s Work Together</h2>
+      <p>Open to Data Analyst, MIS Analyst, Reporting Analyst, and Business Analyst fresher roles.</p>
+      <div class="line"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="card"><h3>📧 Email</h3><p><a href="sheeramshinde195@gmail.com">sheeramshinde195@gmail.com</a></p></div>
+      <div class="card"><h3>💼 LinkedIn</h3><p><a href="https://www.linkedin.com/in/shreeram-shinde-259b24385/">linkedin.com</a></p></div>
+      <div class="card"><h3>💻 GitHub</h3><p><a href="https://github.com/sheeramshinde195-art">github.com</a></p></div>
+      <div class="card"><h3>📄 Resume</h3><p><a href="C:\Users\HP\OneDrive\Documents\resume\Data Analyst Resume 2.pdf" download>Download Resume</a></p></div>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 Shreeram Shinde • Data Analyst Portfolio</footer>
+
+<script>
+const words=["I turn raw data into business insights.","I clean, query, analyze and visualize data.","Python • SQL • Pandas • MySQL • EDA."];
+let w=0,c=0,del=false;
+function type(){
+  const t=words[w];
+  document.getElementById("typed").textContent=t.slice(0,c);
+  if(!del&&c<t.length)c++;
+  else if(!del&&c===t.length){del=true;setTimeout(type,1400);return;}
+  else if(del&&c>0)c--;
+  else{del=false;w=(w+1)%words.length;}
+  setTimeout(type,del?35:70);
+}
+type();
+document.querySelectorAll("[data-count]").forEach(el=>{
+  let target=+el.dataset.count,n=0;
+  const i=setInterval(()=>{n++;el.textContent=n;if(n>=target)clearInterval(i);},30);
+});
+window.addEventListener("scroll",()=>{
+  document.querySelectorAll(".fill").forEach(f=>{
+    if(f.getBoundingClientRect().top<window.innerHeight-80)f.style.width=f.dataset.w+"%";
+  });
+});
+</script>
+
+</body>
+</html>
