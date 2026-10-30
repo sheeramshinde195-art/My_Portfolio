@@ -355,22 +355,91 @@ footer{border-top:1px solid var(--line);padding:30px;text-align:center;color:var
 <header class="hero">
   <div class="wrap hero-grid">
     <div>
-      <div class="badge">Fresher Data Analyst </div>
+      <div class="badge">Fresher Data Analyst</div>
+
       <h1>Hi, I’m <span class="gradient">Shreeram Shinde</span></h1>
-      <div class="type"><span id="typed"></span><span class="cursor">&nbsp;</span></div>
-      <p class="desc">I analyze raw data using Python, Pandas, SQL and MySQL to find patterns, build KPIs, and turn numbers into clear business decisions.</p>
+
+      <div class="type">
+        <span id="typed"></span><span class="cursor">&nbsp;</span>
+      </div>
+
+      <p class="desc">
+        I analyze raw data using Python, Pandas, SQL and MySQL to find patterns,
+        build KPIs, and turn numbers into clear business decisions.
+      </p>
+
       <div class="buttons">
         <a href="#project" class="btn btn1">Project</a>
         <a href="#contact" class="btn btn2">Hire Me</a>
+
+        <!-- View My Resume Button -->
+        <a href="./Data Analyst Resume 2.pdf"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn resume-btn">
+           View My Resume <span>↗</span>
+        </a>
+
       </div>
     </div>
+<style>
+/* ================= SAME STYLE FOR ALL BUTTONS ================= */
+
+.buttons .btn {
+    background: transparent !important;
+    color: #20C9DF !important;
+    border: 2px solid #20C9DF !important;
+    border-radius: 16px !important;
+
+    padding: 14px 30px;
+    font-weight: 700;
+    text-decoration: none;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    transition: all 0.35s ease;
+}
+
+/* Same Premium Hover Effect */
+
+.buttons .btn:hover {
+    background: #20C9DF !important;
+    color: #07111C !important;
+
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 8px 25px rgba(32, 201, 223, 0.35),
+        0 0 35px rgba(32, 201, 223, 0.2);
+}
+
+/* Resume Arrow Animation */
+
+.resume-btn span {
+    transition: transform 0.3s ease;
+}
+
+.resume-btn:hover span {
+    transform: translate(4px, -4px);
+}
+
+/* Click Effect */
+
+.buttons .btn:active {
+    transform: scale(0.96);
+}
+</style>
     <div class="dashboard">
       <div class="kpis">
         <div class="kpi"><b data-count="6">0</b><small>+Analytics Steps Mastered</small></div>
         <div class="kpi"><b data-count="2">0</b><small>+Project</small></div>
         <div class="kpi"><b data-count="15">0</b><small>+Core Tools</small></div>
-        <div class="kpi"><b data-count="99.99">0</b><small> % Learning Mindset</small></div>
+        <div class="kpi"><b data-count="99.99">0</b><small>% Learning Mindset</small></div>
       </div>
+
       <div class="chart">
         <div class="bar" style="height:35%"></div>
         <div class="bar" style="height:70%"></div>
