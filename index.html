@@ -104,13 +104,14 @@ footer{border-top:1px solid var(--line);padding:30px;text-align:center;color:var
 
 .about-photo img {
   width: 240px;
-  height: 200px;
+  height: 240px;
   object-fit: cover;         /* keeps face centered, no stretching */
   border-radius: 50%;        /* circular — swap to 16px for rounded square */
-  border: 6px solid #e0e0e0; /* subtle frame */
-  box-shadow: 0 8px 29px rgba(0, 0, 0, 0.12);
+  border: 4px solid #e0e0e0; /* subtle frame */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   
   /* Added for the hover effect */
+
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
               border-color 0.4s ease, 
               box-shadow 0.4s ease;
@@ -397,10 +398,36 @@ footer{border-top:1px solid var(--line);padding:30px;text-align:center;color:var
     <!-- Personal Introduction -->
     <div class="card about-card">
 
-      <!-- Photo -->
-      <div class="about-photo">
-          <img src="./myimg.png" alt="Shreeram Shinde">
-      </div>
+      <!-- ================= ABOUT PHOTO ================= -->
+
+<div class="about-photo">
+    <img src=".\profile.png" alt="Shreeram Shinde">
+</div>
+
+
+<style>
+
+/* About Photo */
+
+.about-photo img {
+  width: 240px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #e0e0e0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease;
+}
+
+/* The Hover Effect */
+
+.about-photo img:hover {
+  transform: scale(1.05) translateY(-5px);
+  border-color: var(--accent);
+  box-shadow: 0 15px 35px rgba(34, 211, 238, 0.25);
+}
+
+</style>
 
       <!-- Text -->
       <div class="about-text">
@@ -1145,7 +1172,7 @@ if (statsSection) {
       <div class="card"><h3>📧 Email</h3><p><a href="sheeramshinde195@gmail.com">sheeramshinde195@gmail.com</a></p></div>
       <div class="card"><h3>💼 LinkedIn</h3><p><a href="https://www.linkedin.com/in/shreeram-shinde-259b24385/">linkedin.com</a></p></div>
       <div class="card"><h3>💻 GitHub</h3><p><a href="https://github.com/sheeramshinde195-art">github.com</a></p></div>
-      <div class="card"><h3>📄 Resume</h3><p><a href="./Data Analyst Resume 2.pdf" download>Download Resume</a></p></div>
+      <div class="card"><h3>📄 Resume</h3><p><a href="C:\Users\HP\OneDrive\Documents\resume\Data Analyst Resume 2.pdf" download>Download Resume</a></p></div>
     </div>
   </div>
 </section>
