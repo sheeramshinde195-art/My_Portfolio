@@ -504,11 +504,103 @@ footer{border-top:1px solid var(--line);padding:30px;text-align:center;color:var
 </head>
 <body>
 <div id="vanta-bg"></div>
-<nav>
+
+<style>
+/* Hamburger button: hidden on desktop, so desktop is unchanged */
+.nav-toggle { display: none; }
+
+@media (max-width: 900px) {
+  nav .wrap { position: relative; }
+
+  .nav-toggle {
+    display: block;
+    margin-left: auto;
+    width: 44px;
+    height: 44px;
+    background: none;
+    border: 0;
+    color: inherit;          /* uses your nav text colour */
+    cursor: pointer;
+    position: relative;
+  }
+  .nav-toggle .bar,
+  .nav-toggle .bar::before,
+  .nav-toggle .bar::after {
+    content: "";
+    position: absolute;
+    left: 10px;
+    width: 24px;
+    height: 2px;
+    background: currentColor;
+    transition: transform .3s, background .3s;
+  }
+  .nav-toggle .bar { top: 21px; }
+  .nav-toggle .bar::before { top: -8px; left: 0; }
+  .nav-toggle .bar::after  { top: 8px;  left: 0; }
+
+  /* ☰ becomes ✕ when open */
+  .nav-toggle[aria-expanded="true"] .bar { background: transparent; }
+  .nav-toggle[aria-expanded="true"] .bar::before { transform: translateY(8px) rotate(45deg); }
+  .nav-toggle[aria-expanded="true"] .bar::after  { transform: translateY(-8px) rotate(-45deg); }
+
+  /* Links turn into a dropdown panel */
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    background: #0a192f;     /* CHANGE to your nav background colour */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .35s ease;
+  }
+  .nav-links.open { max-height: 80vh; }
+
+  .nav-links a {
+    display: block;
+    margin: 0;               /* removes desktop spacing */
+    padding: 14px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+  }
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const navToggle = document.getElementById('navToggle');
+  const navLinks  = document.getElementById('navLinks');
+
+  if (!navToggle || !navLinks) {
+    console.error('Menu not found. Check id="navToggle" and id="navLinks" in your HTML.');
+    return;
+  }
+
+  function setMenu(open) {
+    navLinks.classList.toggle('open', open);
+    navToggle.setAttribute('aria-expanded', String(open));
+  }
+
+  navToggle.addEventListener('click', function () {
+    setMenu(!navLinks.classList.contains('open'));
+  });
+
+  navLinks.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { setMenu(false); });
+  });
+});
+</script><nav>
   <div class="wrap">
     <div class="logo">Shreeram<span> Shinde</span></div>
-    
-    <div>
+
+    <!-- NEW: hamburger button (hidden on desktop) -->
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"
+            aria-expanded="false" aria-controls="navLinks">
+      <span class="bar"></span>
+    </button>
+
+    <!-- only change: added id and class -->
+    <div id="navLinks" class="nav-links">
       <a href="#about">About</a>
       <a href="#education">Education</a>
       <a href="#certifications">Certificates</a>
@@ -517,10 +609,8 @@ footer{border-top:1px solid var(--line);padding:30px;text-align:center;color:var
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
     </div>
-
   </div>
 </nav>
-
 
 <header class="hero">
   <div class="wrap hero-grid">
@@ -552,6 +642,7 @@ footer{border-top:1px solid var(--line);padding:30px;text-align:center;color:var
 
       </div>
     </div>
+
 <style>
 /* ================= SAME STYLE FOR ALL BUTTONS ================= */
 
